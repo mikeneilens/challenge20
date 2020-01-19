@@ -129,6 +129,7 @@ class Trolley {
         }
         case "L": return this.rotateLeft();
         case "R": return this.rotateRight();
+        default: return this;
       }
     }
     get referenceId() {
@@ -149,6 +150,9 @@ const trolleyFrom = (referenceId) => {
       const buff = new Buffer.from(referenceId, 'base64');
       const decoded =  buff.toString('ascii');
       const parts = decoded.split(",");
+      if (parts.length != 3 ) {
+        return getInitialTrolley();
+      }
       return new Trolley(new Position(Number(parts[0]),Number(parts[1])), new Orientation(parts[2])  );
 }
 

@@ -4,7 +4,9 @@ const app = express();
 const challenge20 = require('./app.js');
 
 app.get('/', (req, res) => {
-  const name = req.query.name;
+  const referenceid = req.query.referenceid;
+  const command = req.command;
+  if (command != undefined)
   //res.send('Hello ' + name + ' from App Engine!');
   res.send( challenge20.getInitialTrolley() );
 });
