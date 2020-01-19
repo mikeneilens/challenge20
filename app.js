@@ -156,13 +156,13 @@ const map = "*******" + newLine + "**    *" + newLine + "** ** *";
 
 const getInitialTrolley = () => {
   const trolley = new Trolley(startingPosition(map),new Orientation("E"));
-  return trolley.viewAheadAndReferenceId(mapData);
+  return trolley.viewAheadAndReferenceId(map);
 }
 
-const moveTrolley = (command, referenceId, mapData) => {
+const moveTrolley = (command, referenceId, map) => {
     const trolley = trolleyFrom(referenceId);
-    const movedTrolley = trolley.moveOrRotate(command, mapData);
-    return movedTrolley.viewAheadAndReferenceId(mapData);
+    const movedTrolley = trolley.moveOrRotate(command, map);
+    return movedTrolley.viewAheadAndReferenceId(map);
 }
 
 module.exports = {getInitialTrolley, moveTrolley};
