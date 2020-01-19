@@ -165,7 +165,7 @@ const trolleyFrom = (referenceId) => {
       const decoded =  buff.toString('ascii');
       const parts = decoded.split(",");
       if (parts.length != 3 ) {
-        return getInitialTrolley();
+        return new Trolley(startingPosition(map),new Orientation("E"));
       }
       return new Trolley(new Position(Number(parts[0]),Number(parts[1])), new Orientation(parts[2])  );
 }
