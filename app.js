@@ -1,4 +1,4 @@
-const mapdata = requires('./mapdata.js');
+const mapdata = require('./mapdata.js');
 const map = mapdata.map;
 
 class Position {
