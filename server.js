@@ -6,8 +6,8 @@ const challenge20 = require('./app.js');
 app.get('/', (req, res) => {
   const referenceid = req.query.referenceid;
   const command = req.query.command;
-  if (command == undefined) {
-      res.send( challenge20.getInitialTrolley() + ' command=' + command);
+  if (command == undefined && referenceid != undefined) {
+      res.send( challenge20.getInitialTrolley());
   } else {
       res.send( challenge20.moveTrolley(command, referenceid));
   }
