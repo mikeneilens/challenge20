@@ -18,7 +18,7 @@ const moveWest = new Position(-1,0);
 const moveEast = new Position(1,0);
 
 const fixture = "*";
-const openspace = " ";
+const openspace = ".";
 const newLine = "\n";
 
 const contentAt = (mapData, position) => {
