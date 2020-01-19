@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
   if (command == undefined) {
       res.send( challenge20.getInitialTrolley() + ' command=' + command);
   } else {
+      console.log(`command = ${command} referenceid = ${referenceid}`);
       res.send( challenge20.moveTrolley(command, referenceid));
   }
   //res.send('Hello ' + name + ' from App Engine!');
