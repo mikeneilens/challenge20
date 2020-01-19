@@ -19,6 +19,7 @@ const moveEast = new Position(1,0);
 
 const fixture = "*";
 const openspace = ".";
+const exit = "X";
 const newLine = "\n";
 
 const contentAt = (mapData, position) => {
@@ -84,8 +85,10 @@ const viewAheadAt = (mapData, position, orientation) => {
     let newPosition = position;
     let result = [];
     while ( contentAt(mapData, newPosition.plus(orientation.ahead)) != fixture ) {
-        newPosition  = newPosition.plus(orientation.ahead);
-        var stringForPosition = "O";
+        newPosition  = newPosition.plus(orientation.ahead);        
+        var stringForPosition = "";
+        if (contentAt(mapData, newPosition) == openspace) stringForPosition += "O";
+        if (contentAt(mapData, newPosition) == exit) stringForPosition += "X";
         if (contentAt(mapData, newPosition.plus(orientation.left)) == openspace) stringForPosition += "L";
         if (contentAt(mapData, newPosition.plus(orientation.right)) == openspace) stringForPosition += "R";
         result.push(stringForPosition);
