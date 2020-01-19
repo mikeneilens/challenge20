@@ -155,12 +155,6 @@ const trolleyFrom = (referenceId) => {
 const map = "*******" + newLine + "**    *" + newLine + "** ** *";
 
 const getInitialTrolley = () => {
-  return new Trolley(startingPosition(map),new Orientation("E"));
-}
-
-const map = "*******" + newLine + "**    *" + newLine + "** ** *";
-
-const getInitialTrolley = () => {
   const trolley = new Trolley(startingPosition(map),new Orientation("E"));
   return trolley.viewAheadAndReferenceId(mapData);
 }
