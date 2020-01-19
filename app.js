@@ -1,6 +1,5 @@
 const mapdata = require('./mapdata.js');
 const map = mapdata.map;
-console.log(`map data is ${map}`);
 
 class Position {
     constructor(x, y) {
@@ -161,8 +160,9 @@ const trolleyFrom = (referenceId) => {
 }
 
 const getInitialTrolley = () => {
-  const trolley = new Trolley(startingPosition(map),new Orientation("E"));
-  return trolley.viewAheadAndReferenceId(map);
+    console.log(`map data is ${map}`);
+    const trolley = new Trolley(startingPosition(map),new Orientation("E"));
+    return trolley.viewAheadAndReferenceId(map);
 }
 
 const moveTrolley = (command, referenceId) => {
