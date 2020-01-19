@@ -131,13 +131,13 @@ class Trolley {
         case "R": return this.rotateRight();
       }
     }
-    encode() {
+    get referenceId() {
       const string = this.position.x.toString() + "," + this.position.y.toString() + "," + this.orientation.value;
       let buff = new Buffer.from(string);
       return buff.toString('base64');
     }
-    refernceIdandViewAhead(mapData) {
-        let output = this.encode();
+    viewAheadAndReferenceId(mapData) {
+        let output = this.referenceId;
         for (const element of this.viewAhead(mapData)) {
           output = output + "," + element;
         } 
