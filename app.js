@@ -165,4 +165,4 @@ const moveTrolley = (command, referenceId, mapData) => {
     return movedTrolley.viewAheadAndReferenceId(mapData);
 }
 
-module.exports = {getInitialTrolley, movedTrolley};
+module.exports = {getInitialTrolley, moveTrolley};
