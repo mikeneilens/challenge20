@@ -18,6 +18,8 @@ const fixture = "*";
 const openspace = " ";
 const newLine = "\n";
 
+const map = "*******" + newLine + "**    *" + newLine + "** ** *";
+
 const contentAt = (mapData, position) => {
   
     if (position.x < 0 || position.y < 0) return fixture
@@ -156,14 +158,12 @@ const trolleyFrom = (referenceId) => {
       return new Trolley(new Position(Number(parts[0]),Number(parts[1])), new Orientation(parts[2])  );
 }
 
-const map = "*******" + newLine + "**    *" + newLine + "** ** *";
-
 const getInitialTrolley = () => {
   const trolley = new Trolley(startingPosition(map),new Orientation("E"));
   return trolley.viewAheadAndReferenceId(map);
 }
 
-const moveTrolley = (command, referenceId, map) => {
+const moveTrolley = (command, referenceId) => {
     const trolley = trolleyFrom(referenceId);
     const movedTrolley = trolley.moveOrRotate(command, map);
     return movedTrolley.viewAheadAndReferenceId(map);
