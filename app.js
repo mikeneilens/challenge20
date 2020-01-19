@@ -166,6 +166,7 @@ const getInitialTrolley = () => {
 }
 
 const moveTrolley = (command, referenceId) => {
+    console.log(`map data is ${map}`);
     const trolley = trolleyFrom(referenceId);
     const movedTrolley = trolley.moveOrRotate(command, map);
     return movedTrolley.viewAheadAndReferenceId(map);
