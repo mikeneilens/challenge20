@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const challenge20 = require('app.js');
+const challenge20 = require('./app.js');
 
 app.get('/', (req, res) => {
   const name = req.query.name;
