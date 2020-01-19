@@ -1,5 +1,6 @@
 const mapdata = require('./mapdata.js');
 const map = mapdata.map;
+console.log(`map data is ${map}`);
 
 class Position {
     constructor(x, y) {
