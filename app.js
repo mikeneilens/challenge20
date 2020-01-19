@@ -153,6 +153,7 @@ const trolleyFrom = (referenceId) => {
       const decoded =  buff.toString('ascii');
       const parts = decoded.split(",");
       if (parts.length != 3 ) {
+        console.log(`invalid referenceid: ${referenceId}`)  
         return getInitialTrolley();
       }
       return new Trolley(new Position(Number(parts[0]),Number(parts[1])), new Orientation(parts[2])  );
