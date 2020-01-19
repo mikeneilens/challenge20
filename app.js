@@ -1,3 +1,6 @@
+const mapdata = requires('./mapdata.js');
+const map = mapdata.map;
+
 class Position {
     constructor(x, y) {
         this.x = x;
@@ -17,17 +20,6 @@ const moveEast = new Position(1,0);
 const fixture = "*";
 const openspace = " ";
 const newLine = "\n";
-
-const map = "**************************\n" +
-"*                        *\n" +
-"* ********** *********** *\n" +
-"* ********** *********** *\n" +
-"*                        *\n" +
-"* ********** *********** *\n" +
-"* ********** *********** *\n" +
-"* ********** *********** *\n" +
-"*                        *\n" +
-"**************************\n";
 
 const contentAt = (mapData, position) => {
   
