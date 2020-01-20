@@ -19,8 +19,8 @@ If only a referenceid is returned you cannot move forward as you are up against 
 
 You may call the webservice with these query parms to move around the maze.
 
-+ command=<command> where <command> is either M (to move forward), L (to rotate 90 degrees left) or R (to rotate 90 degrees right).
++ `command=<command>` where `<command>` is either M (to move forward), L (to rotate 90 degrees left) or R (to rotate 90 degrees right).
 
-+ referenceid=<referenceid> where the <referenceid> is the value returned the last time you called the service.
++ `referenceid=<referenceid>` where the `<referenceid>` is the value returned the last time you called the service.
   
 If you try to move forward when you are up against a wall you won't move. If you enter an invalid referenceid you will return to the start of the maze.  
