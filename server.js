@@ -6,6 +6,8 @@ const challenge20 = require('./app.js');
 app.get('/', (req, res) => {
   const referenceid = req.query.referenceid;
   const command = req.query.command;
+  let repeat = req.query.repeat;
+  if (repeat == undefined) { repeat = 1; }
   if (command == undefined || referenceid == undefined) {
       res.send( challenge20.getInitialTrolley());
   } else {

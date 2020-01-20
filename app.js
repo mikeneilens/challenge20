@@ -167,9 +167,13 @@ const getInitialTrolley = () => {
     return trolley.viewAheadAndReferenceId(map);
 }
 
-const moveTrolley = (command, referenceId) => {
+const moveTrolley = (command, referenceId, repeat = 1) => {
     const trolley = trolleyFrom(referenceId);
-    const movedTrolley = trolley.moveOrRotate(command, map);
+    let movedTrolley = trolley.moveOrRotate(command, map);
+    let count = 1; while (count < repeat) {
+        movedTrolley = movedTrolley.moveOrRotate(command, map);
+        count++;
+    }
     return movedTrolley.viewAheadAndReferenceId(map);
 }
 
