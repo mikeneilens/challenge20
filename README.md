@@ -1,7 +1,7 @@
 # challenge20
 
 This is a webservice which reveals a route through a maze.`
-If you call it with no query params it will return a commma separated list. The first item in the list is a referenceid. Other items in the list show you what is in each position ahead of you, starting with the space closest to you.
+If you call it using a GET with no query params it will return a commma separated list. The first item in the list is a referenceid. Other items in the list show you what is in each position ahead of you, starting with the space closest to you.
 
 + O means there is an empty space you can move into.
 
@@ -22,5 +22,7 @@ You may call the webservice with these query parms to move around the maze.
 + `command=<command>` where `<command>` is either M (to move forward), L (to rotate 90 degrees left) or R (to rotate 90 degrees right).
 
 + `referenceid=<referenceid>` where the `<referenceid>` is the value returned the last time you called the service.
-  
+
++ `repeat=<repeat>` where `<repeat>` is an integer between 1 and 50 used to repeat the command. This is an optional query parm with a default of 1.
+
 If you try to move forward when you are up against a wall you won't move. If you enter an invalid referenceid you will return to the start of the maze.  

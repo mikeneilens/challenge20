@@ -170,7 +170,7 @@ const getInitialTrolley = () => {
 const moveTrolley = (command, referenceId, repeat = 1) => {
     const trolley = trolleyFrom(referenceId);
     let movedTrolley = trolley.moveOrRotate(command, map);
-    let count = 1; while (count < repeat) {
+    let count = 1; while (count < repeat && count <= 50) {
         movedTrolley = movedTrolley.moveOrRotate(command, map);
         count++;
     }
