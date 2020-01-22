@@ -26,3 +26,7 @@ You may call the webservice with these query parms to move around the maze.
 + `repeat=<repeat>` where `<repeat>` is an integer between 1 and 50 used to repeat the command. This is an optional query parm with a default of 1.
 
 If you try to move forward when you are up against a wall you won't move. If you enter an invalid referenceid you will return to the start of the maze.  
+
+A sample request could be: https://challenge20.appspot.com/?command=M&referenceid=MTEsOCxF&repeat=2
+
+This would attempt to move you 2 positions forward in whatever direction you are facing and return a new referenceid and the view ahead from your new position. n.b. this may return the start of the maze if you try it as the referenceid may not be correct or it may not move you forward if you are facing a wall.
