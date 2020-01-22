@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
   if (command == undefined || referenceid == undefined) {
       res.send( challenge20.getInitialTrolley());
   } else {
+      res.setHeader("Access-Control-Allow-Origin", "*")
       res.send( challenge20.moveTrolley(command, referenceid, repeat));
   }
 });
