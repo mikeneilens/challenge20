@@ -33,7 +33,7 @@ This would attempt to move you 2 positions forward in whatever direction you are
 
 The challenge is to use the webservice to determine the requests needed to arrive at the end of the maze.
 
-For example, suppose the maze looks like this (`*` are walls and `.` are open space):
+For example, suppose the maze looks like this (`*` are walls,`.` are open space and X is the exit):
 ```
 *****
 *...*
