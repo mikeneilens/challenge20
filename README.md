@@ -30,3 +30,7 @@ If you try to move forward when you are up against a wall you won't move. If you
 A sample request could be: https://challenge20.appspot.com/?command=M&referenceid=MTEsOCxF&repeat=2
 
 This would attempt to move you 2 positions forward in whatever direction you are facing and return a new referenceid and the view ahead from your new position. n.b. this may return the start of the maze if you try it as the referenceid may not be correct or it may not move you forward if you are facing a wall.
+
+The challenge is to determine the requests needed to arrive at the end of the maze.
+
+For example, suppose the maze looks like this (`*` are walls and `.` are open space):
