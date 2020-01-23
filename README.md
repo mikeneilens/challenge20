@@ -56,7 +56,7 @@ https://challenge20.appspot.com/?referenceid=MiwxLEU&command=R response=MiwxLFM=
 https://challenge20.appspot.com/?referenceid=MiwxLEU&command=M response=MywxLEU= // you are now at the end of the corridor.
 https://challenge20.appspot.com/?referenceid=MywxLEU=&command=L response=MywxLE4=
 https://challenge20.appspot.com/?referenceid=MywxLEU=&command=R response=MywxLFM=,O,OR // You should move down here as other routes are blocked.
-https://challenge20.appspot.com/?referenceid=MywxLEU=&command=M response=MywxLEU=
+https://challenge20.appspot.com/?referenceid=MywxLEU=&command=M response=MywxLEU= // notice how you tried to move but the referenceid didn't change as you were facing a wall.
 
 Can’t move forward so Turn Right (to face South)
 https://challenge20.appspot.com/?referenceid=MywxLEU=&command=R response=MywxLFM=,O,OR
