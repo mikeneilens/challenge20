@@ -8,10 +8,10 @@ app.get('/', (req, res) => {
   const command = req.query.command;
   let repeat = req.query.repeat;
   if (repeat == undefined) { repeat = 1; }
+  res.setHeader("Access-Control-Allow-Origin", "*");
   if (command == undefined || referenceid == undefined) {
       res.send( challenge20.getInitialTrolley());
   } else {
-      res.setHeader("Access-Control-Allow-Origin", "*")
       res.send( challenge20.moveTrolley(command, referenceid, repeat));
   }
 });
