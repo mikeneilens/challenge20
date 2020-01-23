@@ -31,7 +31,7 @@ A sample request could be: https://challenge20.appspot.com/?command=M&referencei
 
 This would attempt to move you 2 positions forward in whatever direction you are facing and return a new referenceid and the view ahead from your new position. n.b. this may return the start of the maze if you try it as the referenceid may not be correct or it may not move you forward if you are facing a wall.
 
-The challenge is to determine the requests needed to arrive at the end of the maze.
+The challenge is to use the webservice to determine the requests needed to arrive at the end of the maze.
 
 For example, suppose the maze looks like this (`*` are walls and `.` are open space):
 ```
@@ -44,5 +44,47 @@ For example, suppose the maze looks like this (`*` are walls and `.` are open sp
 *****  
 ```
 
-Possible requests and response could be:
+Your first request will give the data for x=1 and y=1 (working from top left) and a view looking in an east direction. Possible requests and response could be:
+
+```
+https://challenge20.appspot.com/  response=MSwxLEU=,O,OR   // this initial request gives the referenceid of your starting position.
+https://challenge20.appspot.com/?referenceid=MSwxLEU&command=L response=MSwxLE4=   // if you rotate left you are facing a wall
+https://challenge20.appspot.com/?referenceid=MSwxLEU&command=R response=MSwxLFM= // if you rotate right you are facing a wall
+https://challenge20.appspot.com/?referenceid=MSwxLEU&command=M response=MiwxLEU=,OR // if you move forward there is space for one more move
+https://challenge20.appspot.com/?referenceid=MiwxLEU&command=L response=MiwxLE4=
+https://challenge20.appspot.com/?referenceid=MiwxLEU&command=R response=MiwxLFM=
+https://challenge20.appspot.com/?referenceid=MiwxLEU&command=M response=MywxLEU= // you are now at the end of the corridor.
+https://challenge20.appspot.com/?referenceid=MywxLEU=&command=L response=MywxLE4=
+https://challenge20.appspot.com/?referenceid=MywxLEU=&command=R response=MywxLFM=,O,OR // You should move down here as other routes are blocked.
+https://challenge20.appspot.com/?referenceid=MywxLEU=&command=M response=MywxLEU=
+
+Can’t move forward so Turn Right (to face South)
+https://challenge20.appspot.com/?referenceid=MywxLEU=&command=R response=MywxLFM=,O,OR
+https://challenge20.appspot.com/?referenceid=MywxLFM=&command=M response=MywyLFM=,OR
+https://challenge20.appspot.com/?referenceid=MywyLFM=&command=L response=MywyLEU=
+https://challenge20.appspot.com/?referenceid=MywyLFM=&command=R response=MywyLFc=
+https://challenge20.appspot.com/?referenceid=MywyLFM=&command=M response=MywzLFM=
+https://challenge20.appspot.com/?referenceid=MywzLFM=&command=L response=MywzLEU=
+https://challenge20.appspot.com/?referenceid=MywzLFM=&command=R response=MywzLFc=,OL
+https://challenge20.appspot.com/?referenceid=MywzLFM=&command=M response=MywzLFM=
+
+Turn Right (to face West)
+https://challenge20.appspot.com/?referenceid=MywzLFM=&command=R response=MywzLFc=,OL
+https://challenge20.appspot.com/?referenceid=MywzLFc=&command=M response=MiwzLFc=
+https://challenge20.appspot.com/?referenceid=MiwzLFc=&command=L response=MiwzLFM=,O,OLR
+https://challenge20.appspot.com/?referenceid=MiwzLFc=&command=R response=MiwzLE4=
+https://challenge20.appspot.com/?referenceid=MiwzLFc=&command=M response=MiwzLFc=
+
+Turn Left (to face South)
+https://challenge20.appspot.com/?referenceid=MiwzLFc=&command=L response=MiwzLFM=,O,OLR
+https://challenge20.appspot.com/?referenceid=MiwzLFM=&command=M response=Miw0LFM=,OLR
+https://challenge20.appspot.com/?referenceid=Miw0LFM=&command=L response=Miw0LEU=
+https://challenge20.appspot.com/?referenceid=Miw0LFM=&command=R response=Miw0LFc=
+https://challenge20.appspot.com/?referenceid=Miw0LFM=&command=M response=Miw1LFM=
+https://challenge20.appspot.com/?referenceid=Miw1LFM=&command=L response=Miw1LEU=,O
+https://challenge20.appspot.com/?referenceid=Miw1LFM=&command=R response=Miw1LFc=,X // if you turn right and move you reach the exit!
+
+```
+
+
 
