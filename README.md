@@ -31,7 +31,7 @@ A sample request could be: https://challenge20.appspot.com/?command=M&referencei
 
 This would attempt to move you 2 positions forward in whatever direction you are facing and return a new referenceid and the view ahead from your new position. n.b. this may return the start of the maze if you try it as the referenceid may not be correct or it may not move you forward if you are facing a wall.
 
-The challenge is to use the webservice to determine the requests needed to arrive at the end of the maze.
+_The challenge is to use the webservice to determine the requests needed to arrive at the end of the maze._
 
 For example, suppose the maze looks like this (`*` are walls,`.` are open space and X is the exit):
 ```
