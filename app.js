@@ -177,4 +177,4 @@ const moveTrolley = (command, referenceId, repeat = 1) => {
     return movedTrolley.viewAheadAndReferenceId(map);
 }
 
-module.exports = {getInitialTrolley, moveTrolley};
+module.exports = {getInitialTrolley, moveTrolley, contentAt, Position, Orientation, Trolley, viewAheadAt};
