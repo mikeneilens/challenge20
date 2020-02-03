@@ -112,16 +112,10 @@ describe('Trolley.moveOrRotate()', function() {
         assert.deepEqual(new Orientation('N'), newTrolley.orientation);
     });   
     it('create a trolley in a new position and a view that is one space shorter than before if the trolley can be moved',function() {
-        const mapData = 
-        "************\n" +
-        "           *\n" +
-        "************\n";
-        const originalTrolley  = getInitialTrolley(mapData);
-
-        const movedTrolley = moveTrolley('M', originalTrolley.referenceId);
-        
-        assert.equal(1, originalTrolley.viewAhead(mapData).length - movedTrolley.viewAhead(mapData).length);
-        assert.equal([],movedTrolley.viewAhead(mapData) );
+        var originalOutput  = getInitialTrolley().split(",");
+        const referenceId = originalOutput[0];
+        const outputAfterMove = moveTrolley('M', referenceId).split(",");
+        assert.equal(1, originalOutput.length - outputAfterMove.length)
     });   
 });
 
